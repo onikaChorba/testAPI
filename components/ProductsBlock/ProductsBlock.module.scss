@@ -1,0 +1,32 @@
+.productsBlock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.product {
+  width: 45%;
+  margin: 1rem;
+  padding: 3%;
+  background: rgb(219, 214, 214);
+  border-radius: 20px;
+}
+.productName {
+  padding-top: 1%;
+  padding-bottom: 2%;
+  font-size: 20px;
+}
+.productText {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 18px;
+}
+.productImgBlock {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.productImg {
+  margin: 2% auto;
+  width: 60%;
+  border-radius: 10px;
+}

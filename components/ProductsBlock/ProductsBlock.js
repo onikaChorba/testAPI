@@ -38,7 +38,7 @@ export default function ProductsBlock({ products }) {
         type="button"
         value="men's clothing"
       >
-        men's clothing
+        Men's clothing
       </button>
       <button
         className={styles.productButton}
@@ -46,7 +46,7 @@ export default function ProductsBlock({ products }) {
         type="button"
         value="women's clothing"
       >
-        women's clothing
+        Women's clothing
       </button>
       <button
         className={styles.productButton}
@@ -54,7 +54,7 @@ export default function ProductsBlock({ products }) {
         type="button"
         value="jewelery"
       >
-        jewelery
+        Qewelery
       </button>
       <button
         className={styles.productButton}
@@ -62,7 +62,7 @@ export default function ProductsBlock({ products }) {
         type="button"
         value="electronics"
       >
-        electronics
+        Electronics
       </button>
       <ul className={styles.productsBlock}>
         {card &&

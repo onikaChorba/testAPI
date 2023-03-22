@@ -6,9 +6,19 @@
 .product {
   width: 45%;
   margin: 1rem;
-  padding: 3%;
+  padding: 1%;
   background: rgb(219, 214, 214);
   border-radius: 20px;
+}
+.productButton {
+  cursor: pointer;
+  color: white;
+  background: grey;
+  padding: 10px 30px;
+  border: 3px solid grey;
+  border-radius: 10px;
+  margin-right: 40px;
+  margin-bottom: 20px;
 }
 .productName {
   padding-top: 1%;

@@ -1,12 +1,72 @@
 import styles from "./ProductsBlock.module.scss";
-
+import { useState, useEffect } from "react";
 export default function ProductsBlock({ products }) {
+  const [card, setCards] = useState(products);
+  const [currentCard, setCurrentCard] = useState("All");
+
+  const handleBtns = (e) => {
+    let word = e.target.value;
+    setCurrentCard(word);
+  };
+
+  useEffect(() => {
+    if (currentCard === "All") {
+      setCards(products);
+    } else {
+      const filtered = products.filter((card) => {
+        return (
+          card.category === currentCard || card.category.includes(currentCard)
+        );
+      });
+      setCards(filtered);
+    }
+  }, [currentCard]);
+
   return (
     <div>
-      <h1>All products</h1>
+      <button
+        className={styles.productButton}
+        onClick={handleBtns}
+        type="button"
+        value="All"
+      >
+        All products
+      </button>
+      <button
+        className={styles.productButton}
+        onClick={handleBtns}
+        type="button"
+        value="men's clothing"
+      >
+        men's clothing
+      </button>
+      <button
+        className={styles.productButton}
+        onClick={handleBtns}
+        type="button"
+        value="women's clothing"
+      >
+        women's clothing
+      </button>
+      <button
+        className={styles.productButton}
+        onClick={handleBtns}
+        type="button"
+        value="jewelery"
+      >
+        jewelery
+      </button>
+      <button
+        className={styles.productButton}
+        onClick={handleBtns}
+        type="button"
+        value="electronics"
+      >
+        electronics
+      </button>
       <ul className={styles.productsBlock}>
-        {products &&
-          products.map(({ id, title, price, description, category, image }) => (
+        {card &&
+          card.map(({ id, title, price, description, category, image }) => (
             <ol key={id} className={styles.product}>
               <div className={styles.productImgBlock}>
                 <img

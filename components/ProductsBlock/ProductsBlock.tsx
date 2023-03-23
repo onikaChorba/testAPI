@@ -13,7 +13,7 @@ const ProductsBlock:FC<productsInfoProps> = ({ products })=> {
   const [card, setCards] = useState(products);
   const [currentCard, setCurrentCard] = useState("All");
 
-  const handleBtns = (e) => {
+  const handleBtns = (e:any) => {
     let word = e.target.value;
     setCurrentCard(word);
   };

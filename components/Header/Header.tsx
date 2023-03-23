@@ -1,13 +1,18 @@
 import styles from '../Header/Header.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-export default function Header () {
+import { FC } from 'react';
+
+
+export const Header:FC = () =>{
   
   const navigation = [
-    {id: 1, title: "home", path: '/'}, {id: 2, title: "products", path: '/products'},{id: 3, title: "quotes", path: '/quotes'}
+    {id: 1, title: "home", path: '/'}, {id: 2, title: "products", path: '/products'}
   ]
 
   const {pathname} = useRouter();
+
+  
   return(
   <header>
     <nav className={styles.nav}>

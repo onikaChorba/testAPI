@@ -1,6 +1,15 @@
+import { FC} from "react";
+
 import styles from "./ProductsBlock.module.scss";
 import { useState, useEffect } from "react";
-export default function ProductsBlock({ products }) {
+import { productsType } from "@component/tipes";
+
+type productsInfoProps = {
+  products: productsType[]
+}
+
+const ProductsBlock:FC<productsInfoProps> = ({ products })=> {
+
   const [card, setCards] = useState(products);
   const [currentCard, setCurrentCard] = useState("All");
 
@@ -66,7 +75,7 @@ export default function ProductsBlock({ products }) {
       </button>
       <ul className={styles.productsBlock}>
         {card &&
-          card.map(({ id, title, price, description, category, image }) => (
+          card.map(({id, image, price, title, category,description}:productsType ) => (
             <ol key={id} className={styles.product}>
               <div className={styles.productImgBlock}>
                 <img
@@ -82,7 +91,6 @@ export default function ProductsBlock({ products }) {
               <p className={styles.productText}>
                 <span>Category:</span> {category}
               </p>
-
               <p className={styles.productText}>
                 <span>More info:</span> {description}
               </p>
@@ -92,3 +100,4 @@ export default function ProductsBlock({ products }) {
     </div>
   );
 }
+export default ProductsBlock;

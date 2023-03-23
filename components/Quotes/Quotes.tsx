@@ -1,9 +1,16 @@
 import Head from "next/head";
-import QuotesBlock from "../components/QuotesBlock/QuotesBlock";
+import QuotesBlock from "../QuotesBlock/QuotesBlock";
 import React, { useState, useEffect } from "react";
-import styles from "../components/QuotesBlock/QuotesBlock.module.scss";
+import styles from "../QuotesBlock/QuotesBlock.module.scss";
+
+interface QuotesType {
+  text: string;
+  author: string;
+}
+
 export default function Quotes() {
-  const [quote, setQuote] = useState("");
+
+  const [quote, setQuote] = useState<QuotesType>();
   const [backgroundColor, setBackgroundColor] = useState("#fff");
 
   const getNewQuote = () => {
@@ -26,7 +33,7 @@ export default function Quotes() {
   }, []);
 
   return (
-    <div className="wrapper" style={{ backgroundColor }}>
+    <div className="wrapper quote" style={{ backgroundColor }}>
       <div className={styles.quoteBlock}>
         <Head>
           <title>Quotes</title>

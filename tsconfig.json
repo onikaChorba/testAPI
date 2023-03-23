@@ -18,6 +18,6 @@
       "@component/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/404.js", "pages/products.js", "components/Products/Products.js", "components/QuotesBlock/QuotesBlock.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/404.js", "pages/products.tsx", "components/Products/Products.js", "components/QuotesBlock/QuotesBlock.tsx", "components/Quotes/Quotes.tsx"],
   "exclude": ["node_modules"]
 }

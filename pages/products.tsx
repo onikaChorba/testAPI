@@ -1,6 +1,13 @@
 import Head from "next/head";
 import ProductsBlock from "../components/ProductsBlock/ProductsBlock";
-export const getStaticProps = async () => {
+import { productsType } from "@component/tipes";
+import { GetStaticProps } from "next";
+
+type productsInfoProps = {
+  products: productsType[]
+}
+
+export const getStaticProps:GetStaticProps = async () => {
   const response = await fetch("https://fakestoreapi.com/products");
   const data = await response.json();
   return {
@@ -9,7 +16,8 @@ export const getStaticProps = async () => {
     },
   };
 };
-export default function Products({ products }) {
+
+export default function Products({ products }:productsInfoProps) {
   return (
     <div className="wrapper">
       <Head>

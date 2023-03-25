@@ -2,14 +2,16 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 2%;
+  padding: 1.5rem;
   background: grey;
 }
 .logo {
+  margin-left: 6rem;
   color: white;
 }
 
 .links {
+  margin-right: 1.5rem;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
@@ -17,7 +19,7 @@
   text-transform: uppercase;
 }
 .link {
-  padding-left: 40px;
+  padding-right: 40px;
 }
 .active {
   color: yellow;

@@ -3,10 +3,22 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.productsFilterBlock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.productsFilterButton {
+  width: 80%;
+}
+.productsFilterSelect {
+  width: 20%;
+}
+
 .product {
-  width: 33%;
-  margin: 1% 0% 0% 0%;
-  padding: 1%;
+  width: 30%;
+  margin: 2% 0% 0% 0%;
+  padding: 2%;
   background: rgb(219, 214, 214);
   border-radius: 20px;
 }
@@ -29,7 +41,7 @@
 .productText {
   padding-top: 1%;
   padding-bottom: 1%;
-  font-size: 18px;
+  font-size: 14px;
 }
 .productImgBlock {
   width: 100%;
@@ -38,6 +50,6 @@
 }
 .productImg {
   margin: 2% auto;
-  width: 40%;
+  width: 60%;
   border-radius: 10px;
 }

@@ -11,29 +11,22 @@ interface QuotesType {
 export default function Quotes() {
 
   const [quote, setQuote] = useState<QuotesType>();
-  const [backgroundColor, setBackgroundColor] = useState("#fff");
 
-  const getNewQuote = () => {
+  const getNewQuote = ():void => {
     fetch("https://type.fit/api/quotes")
       .then((response) => response.json())
       .then((data) => {
         const randomIndex = Math.floor(Math.random() * data.length);
         setQuote(data[randomIndex]);
       });
-    const newColor = getRandomColor();
-    setBackgroundColor(newColor);
   };
-  const getRandomColor = () => {
-    const color = Math.floor(Math.random() * 16777215).toString(16);
-    return "#" + color;
-  };
+
   useEffect(() => {
     getNewQuote();
-    getRandomColor();
   }, []);
 
   return (
-    <div className="wrapper quote" style={{ backgroundColor }}>
+    <div className="wrapper quote">
       <div className={styles.quoteBlock}>
         <Head>
           <title>Quotes</title>

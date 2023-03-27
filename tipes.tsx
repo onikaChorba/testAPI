@@ -42,7 +42,7 @@ export type showType ={
   network: networkType,
   genres: Array<string>,
   officialSite: string,
-  summary:FC
+  summary:string
 }
 
 export type filmsType = {

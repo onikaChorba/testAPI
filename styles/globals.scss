@@ -15,7 +15,11 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
+.link {
+  font-size: 26px;
+  line-height: 30px;
+  padding-bottom: 20px;
+}
 .wrapper {
   padding: 2rem 7rem;
 }
@@ -24,4 +28,8 @@ a {
 }
 span {
   color: orange;
+}
+.films {
+  padding-top: 6rem;
+  height: 100vh;
 }

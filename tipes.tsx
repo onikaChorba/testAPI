@@ -1,3 +1,4 @@
+import { FC } from "react"
 
 export type productsType = {
   id: string,
@@ -40,7 +41,8 @@ export type showType ={
   image: imageType,
   network: networkType,
   genres: Array<string>,
-  officialSite: string
+  officialSite: string,
+  summary:FC
 }
 
 export type filmsType = {

@@ -12,7 +12,6 @@ export const Header:FC = () =>{
 
   const {pathname} = useRouter();
 
-  
   return(
   <header>
     <nav className={styles.nav}>

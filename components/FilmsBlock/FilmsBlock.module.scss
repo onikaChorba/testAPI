@@ -1,5 +1,7 @@
 .filmsBlock {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 .filmBlock {
   display: flex;
@@ -7,23 +9,28 @@
   margin-top: 1rem;
   margin-bottom: 2rem;
   &__img {
-    width: 200px;
-    height: 260px;
+    width: 220px;
+    height: 280px;
     margin-right: 2rem;
   }
   &__info {
-    width: 65%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: center;
   }
+  &__shotInfo {
+    padding-bottom: 20px;
+    display: flex;
+  }
 }
 .filmInfo {
   &__name {
+    padding-top: 20px;
+    padding-bottom: 5px;
     font-size: 20px;
     font-weight: bold;
-    padding-bottom: 1rem;
   }
   &__buttons {
     padding-top: 1rem;
@@ -33,4 +40,8 @@
     margin-right: 20px;
     padding: 3px;
   }
+}
+.showButton {
+  padding: 4px;
+  margin: 14px;
 }

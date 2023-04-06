@@ -28,8 +28,8 @@ export default function Films({ films }: filmsInfoProps) {
       <Head>
         <title>Films</title>
       </Head>
-   <div className={styles.links}>
-        {navigation.map(({id, title, path})=>(<Link key={id} href={path} legacyBehavior ><ul className={styles.link}><a>{title}</a></ul></Link>))}
+      <div className="link">
+        {navigation.map(({id, title, path})=>(<Link key={id} href={path} legacyBehavior ><ul className="links link"><a>{title}</a></ul></Link>))}
       </div>
       <div className={styles.filmsBlock}>
       {

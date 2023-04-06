@@ -15,10 +15,16 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.links {
+  display: inline;
+  padding-right: 40px;
+}
 .link {
+  cursor: pointer;
   font-size: 26px;
   line-height: 30px;
   padding-bottom: 20px;
+  text-transform: uppercase;
 }
 .wrapper {
   padding: 2rem 7rem;
@@ -31,5 +37,5 @@ span {
 }
 .films {
   padding-top: 6rem;
-  height: 100vh;
+  min-height: 100vh;
 }

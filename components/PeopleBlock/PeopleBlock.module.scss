@@ -1,0 +1,20 @@
+.peopleBlock {
+  padding: 3%;
+  margin-top: 2%;
+  margin-right: 4%;
+  margin-bottom: 2%;
+  border: 1px solid grey;
+}
+.people {
+  &__name {
+    padding-top: 20px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  &__button {
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 3px;
+  }
+}

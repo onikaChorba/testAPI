@@ -43,7 +43,7 @@ const ProductsBlock:FC<productsInfoProps> = ({ products })=> {
       color: "#979797",
     }),
   };
-  const [card, setCards] = useState(products);
+  const [cards, setCards] = useState(products);
   const [currentCard, setCurrentCard] = useState("All");
   const [selectCategory, setSelectCategory] = useState("All");
 
@@ -60,11 +60,11 @@ const ProductsBlock:FC<productsInfoProps> = ({ products })=> {
     if (currentCard === "All") {
       setCards(products);
     } else if (selectCategory === "high") {
-     const newFiltered = products.sort((a, b) => {
+     const newFiltered = [...products].sort((a, b) => {
       return a.price - b.price});
       setCards(newFiltered);
     } else if (selectCategory === "low") {
-     const newFiltered = products.sort((a, b) => {
+     const newFiltered = [...products].sort((a, b) => {
       return b.price - a.price});
       setCards(newFiltered);
     } else {
@@ -111,8 +111,8 @@ const ProductsBlock:FC<productsInfoProps> = ({ products })=> {
         </div>
         </div>
       <ul className={styles.productsBlock}>
-        {card &&
-          card.map(({id, image, price, title, category,description}:productsType ) => (
+        {cards &&
+          cards.map(({id, image, price, title, category,description}:productsType ) => (
             <ol key={id} className={styles.product}>
               <div className={styles.productImgBlock}>
                 <img

@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   margin: 3%;
+  min-height: 400px;
 }
 .quoteText {
   font-size: 36px;
@@ -19,8 +20,10 @@
   text-align: right;
 }
 .quoteButton {
+  margin-right: 20px;
   padding: 10px 20px;
   border-radius: 10px;
   background: grey;
   color: white;
+  text-transform: uppercase;
 }

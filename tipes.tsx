@@ -11,7 +11,7 @@ export type productsType = {
 
 export type quoteType={
   text: string,
-  author: string
+  author: string,
 }
 export type gendersType = Array<string>
 
@@ -21,6 +21,7 @@ export type scheduleType = {
 }
 export type imageType ={
   original: string,
+  medium: string,
 }
 export type countryType = {
   name: string
@@ -48,4 +49,12 @@ export type showType ={
 export type filmsType = {
   show: showType,
   score: Number | string,
+}
+export type peopleType = {
+  url: string,
+  name: string,
+  birthday: string,
+  image: imageType,
+  gender: string, 
+  country: countryType
 }

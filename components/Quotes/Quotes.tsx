@@ -55,8 +55,8 @@ export default function Quotes() {
         </Head>
         <h1>Random Quote</h1>
         {quote && <QuotesBlock text={quote.text} author={quote.author} />}
-        <div style={{display: "flex", justifyContent: 'space-between', width: '80%'}}>
-          <div>
+        <div className={styles.quoteButtonBlock}>
+          <div className={styles.quoteButtonBlock__share}>
           <button  className={styles.quoteButton} onClick={handleAddToFavorites}><img src="/star.png" width={25}/> </button>
           <button  className={styles.quoteButton} onClick={copyToClipboard}><img src={copied ? '/check.png':"/data-transfer.png" } width={25}/></button>
           <button  className={styles.quoteButton} onClick={handleClickShare}><img src="/share.png" width={25}/></button>

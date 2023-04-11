@@ -1,3 +1,5 @@
+@import "../../styles/media.scss";
+
 .quoteBlock {
   display: flex;
   flex-direction: column;
@@ -19,8 +21,24 @@
   padding-bottom: 40px;
   text-align: right;
 }
+.quoteButtonBlock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  @include screen-tb {
+    width: 80%;
+    justify-content: space-between;
+  }
+  &__share {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .quoteButton {
   margin-right: 20px;
+  margin-bottom: 20px;
   padding: 10px 20px;
   border-radius: 10px;
   background: grey;

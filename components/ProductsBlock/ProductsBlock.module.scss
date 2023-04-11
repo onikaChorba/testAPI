@@ -1,3 +1,5 @@
+@import "../../styles/media.scss";
+
 .productsBlock {
   display: flex;
   flex-wrap: wrap;
@@ -9,28 +11,45 @@
   justify-content: space-between;
 }
 .productsFilterButton {
-  width: 80%;
+  width: 100%;
+  @include screen-tb {
+    width: 80%;
+  }
 }
 .productsFilterSelect {
-  width: 20%;
+  width: 100%;
+  padding-bottom: 20px;
+  @include screen-tb {
+    width: 20%;
+  }
 }
 
 .product {
-  width: 30%;
+  width: 100%;
   margin: 2% 0% 0% 0%;
   padding: 2%;
   background: rgb(219, 214, 214);
   border-radius: 20px;
+  @include screen-tb {
+    width: 48%;
+  }
+  @include screen-lp {
+    width: 30%;
+  }
 }
 .productButton {
   cursor: pointer;
   color: white;
   background: grey;
-  padding: 10px 30px;
+  padding: 5px 10px;
   border: 3px solid grey;
   border-radius: 10px;
-  margin-right: 40px;
+  margin-right: 10px;
   margin-bottom: 20px;
+  @include screen-tb {
+    padding: 10px 30px;
+    margin-right: 40px;
+  }
 }
 .productName {
   text-align: center;

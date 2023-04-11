@@ -1,3 +1,5 @@
+@import "/styles/media.scss";
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -27,7 +29,10 @@ a {
   text-transform: uppercase;
 }
 .wrapper {
-  padding: 2rem 7rem;
+  padding: 1rem 2rem;
+  @include screen-tb {
+    padding: 2rem 7rem;
+  }
 }
 .home {
   height: 100vh;

@@ -1,0 +1,46 @@
+// Small devices
+@mixin screen-sm {
+  @media only screen and (min-width: 400px) {
+    @content;
+  }
+}
+
+// Tablet devices
+@mixin screen-tb {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+// Laptops
+@mixin screen-lp {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+// Medium Laptops
+@mixin screen-md {
+  @media only screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+// Large Laptops
+@mixin screen-lg {
+  @media only screen and (min-width: 2250px) {
+    @content;
+  }
+}
+
+@mixin screen-custom($media) {
+  @media only screen and (min-width: $media) {
+    @content;
+  }
+}
+
+@mixin print {
+  @media print {
+    @content;
+  }
+}

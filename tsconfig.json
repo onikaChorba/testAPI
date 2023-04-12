@@ -18,6 +18,6 @@
       "@component/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/404.js", "pages/products.tsx", "components/Products/Products.js", "components/QuotesBlock/QuotesBlock.tsx", "components/Quotes/Quotes.tsx", "pages/index.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/404.js", "pages/products.tsx", "components/Products/Products.js", "components/QuotesBlock/QuotesBlock.tsx", "components/Quotes/Quotes.tsx", "pages/index.js", "pages/users.js"],
   "exclude": ["node_modules"]
 }

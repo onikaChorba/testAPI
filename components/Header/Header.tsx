@@ -7,7 +7,7 @@ import { FC } from 'react';
 export const Header:FC = () =>{
   
   const navigation = [
-    {id: 1, title: "home", path: '/'}, {id: 2, title: "products", path: '/products'}, {id: 3, title: "films", path: '/films'}
+    {id: 1, title: "home", path: '/'}, {id: 2, title: "products", path: '/products'}, {id: 3, title: "films", path: '/films'}, {id: 4, title: "users", path: '/users'}
   ]
 
   const {pathname} = useRouter();

@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Quotes from "../components/Quotes/Quotes";
-
 export default function Home() {
   return (
     <div>

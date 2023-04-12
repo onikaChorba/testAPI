@@ -3,6 +3,7 @@ import ProductsBlock from "../components/ProductsBlock/ProductsBlock";
 import { productsType } from "@component/tipes";
 import { GetStaticProps } from "next";
 
+
 type productsInfoProps = {
   products: productsType[]
 }
@@ -17,13 +18,14 @@ export const getStaticProps:GetStaticProps = async () => {
   };
 };
 
-export default function Products({ products }:productsInfoProps) {
+export default function Products({products}:productsInfoProps) {
+
   return (
     <div className="wrapper">
       <Head>
         <title>Products</title>
       </Head>
-      <ProductsBlock products={products} />
+      <ProductsBlock  products={products}/>
     </div>
   );
 }

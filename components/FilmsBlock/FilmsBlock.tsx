@@ -16,7 +16,7 @@ export const FilmsBlock:FC<filmsInfoProps> = ({film})=>{
   return (
         <div style={showInfo? {display: 'flex'}: {display: 'block'}}>
           <div className={styles.film}>
-        <img src={film.show.image.original} alt={film.show.name} className={styles.filmBlock__img}/>
+        <img src={film.show.image?.original} alt={film.show.name} className={styles.filmBlock__img}/>
         <div className={styles.filmBlock__shotInfo}>
           <div><div className={styles.filmInfo__name}>{film.show.name}</div>
           <p> Premired: {film.show.premiered}</p></div>

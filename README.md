@@ -1,12 +1,8 @@
 # Next.js site for testing API
 
-This is a simple website built with Next.js that can be used for testing APIs. It includes a homepage that displays a random quote and a favorites page where users can save and view their favorite quotes.
+This is a simple website built with Next.js that used for testing APIs. It includes a homepage that displays a random quote and a favorites page where users can save and view their favorite quotes. The state of the user's favorite quotes is managed using Redux. When a user adds a quote to their favorites list, the quote data is stored in the Redux store. The list of favorite quotes is then displayed on the favorites page, which is connected to the Redux store and updates automatically when the store is updated.
 
-This website also includes two additional pages - a product page and a movies page.
-
-The product page displays a list of products that can be sorted by category and price. Users can browse through the products and view additional details by clicking on individual items.
-
-The movies page displays a list of popular movies and actors. Users can click on a movie or an actor to view more information about them, including a brief description and a list of related movies or actors. 
+In addition to the homepage and favorites page, this website also includes two additional pages - a product page and a movies page. The product page displays a list of products that can be sorted by category and price. Users can browse through the products and view additional details by clicking on individual items. The movies page displays a list of popular movies and actors. 
 
 ##  Installation and Setup
 
@@ -18,6 +14,8 @@ The movies page displays a list of popular movies and actors. Users can click on
  ## Technologies Used
  - React
  - Next.js
+ - Redux
+ - TypeScript
  - JavaScript
  - HTML/Scss
  - API

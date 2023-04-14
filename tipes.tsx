@@ -1,4 +1,3 @@
-import { FC } from "react"
 
 export type productsType = {
   id: string,
@@ -10,7 +9,7 @@ export type productsType = {
 }
 
 export type quoteType={
-  text: string,
+  quote: string,
   author: string,
 }
 export type gendersType = Array<string>

@@ -1,29 +1,40 @@
+import { fetchFilms } from '@component/store/filmsSlice';
 import styles from './FilmsBlock.module.scss';
 import { filmsType } from "@component/tipes";
-import { FC, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 
-type filmsInfoProps = {
-  film: filmsType
-}
+export const FilmsBlock= ()=>{
+  const dispatch = useDispatch();
+  const films = useSelector((state:any) => state.films);
+  useEffect(() => {
+    dispatch(fetchFilms());
+  }, [dispatch]);
 
-export const FilmsBlock:FC<filmsInfoProps> = ({film})=>{
+  if (films.isLoading) {
+    return <h1>Loading....</h1>;
+  }
 
-  const [showInfo, setShowInfo] = useState(false);
-    const handleChange = () => {
-    setShowInfo((current) => !current);
-  };
+
+  // const [showInfo, setShowInfo] = useState(false);
+  //   const handleChange = () => {
+  //   setShowInfo((current) => !current);
+  // };
   return (
-        <div style={showInfo? {display: 'flex'}: {display: 'block'}}>
+    <div>
+    {
+      films.data?.map((film:filmsType, index:number)=>(
+        <div style={ {display: 'flex'}} key={index}>
           <div className={styles.film}>
         <img src={film.show.image?.original} alt={film.show.name} className={styles.filmBlock__img}/>
         <div className={styles.filmBlock__shotInfo}>
           <div><div className={styles.filmInfo__name}>{film.show.name}</div>
           <p> Premired: {film.show.premiered}</p></div>
-          <button className={styles.showButton} onClick={handleChange}>{showInfo ? "less...": "more..."}</button>
+          <button className={styles.showButton} >{ "less... more..."}</button>
         </div></div>
        {
-        showInfo && (<div className={styles.filmBlock__info}>
+   (<div className={styles.filmBlock__info}>
           <div className={styles.filmInfo__name}>{film.show.name}</div>
           <p>Status : {film.show.status}</p>
           <p> Premired: {film.show.premiered}</p>
@@ -40,5 +51,8 @@ export const FilmsBlock:FC<filmsInfoProps> = ({film})=>{
         </div>)
        }
     </div>
+      ))
+    }
+</div>
   )
 }

@@ -9,17 +9,17 @@ type filmsInfoProps = {
   films: filmsType[]
 }
 
-export const getStaticProps:GetStaticProps = async () => {
-  const response = await fetch("https://api.tvmaze.com/search/shows?q=girls");
-  const data = await response.json();
-  return {
-    props: {
-      films: data,
-    },
-  };
-};
+// export const getStaticProps:GetStaticProps = async () => {
+//   const response = await fetch("https://api.tvmaze.com/search/shows?q=girls");
+//   const data = await response.json();
+//   return {
+//     props: {
+//       films: data,
+//     },
+//   };
+// };
 
-export default function Films({ films }: filmsInfoProps) {
+export default function Films() {
       const navigation = [
     {id: 1, title: "All films", path: '/films'}, {id: 2, title: "People", path: '/films/people'}
   ]
@@ -32,11 +32,7 @@ export default function Films({ films }: filmsInfoProps) {
         {navigation.map(({id, title, path})=>(<Link key={id} href={path} legacyBehavior ><ul className="links link"><a>{title}</a></ul></Link>))}
       </div>
       <div className={styles.filmsBlock}>
-      {
-        films.map((film, number)=>(
-          <FilmsBlock film={film} key={number.toString()}/>
-        ))
-      }
+          <FilmsBlock/>
       </div>
     </div>
   );

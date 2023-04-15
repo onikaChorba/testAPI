@@ -1,4 +1,10 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction} from "@reduxjs/toolkit";
+
+interface UserState {
+isLoading: boolean;
+data: any[] | null;
+isError: boolean;
+}
 
 export const fetchUsers = createAsyncThunk("fetchUsers", async () => {
   const responce = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -11,12 +17,13 @@ const usersSlise = createSlice({
     isLoading: false,
     data: null,
     isError: false,
-  },
+  } as UserState,
+    reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchUsers.pending, (state, action) => {
+    builder.addCase(fetchUsers.pending, (state) => {
       state.isLoading = true;
     });
-    builder.addCase(fetchUsers.fulfilled, (state, action) => {
+    builder.addCase(fetchUsers.fulfilled, (state, action: PayloadAction<any[]>) => {
       state.isLoading = false;
       state.data = action.payload;
     });

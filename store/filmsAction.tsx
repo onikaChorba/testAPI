@@ -21,4 +21,3 @@ export const copyToClipboard = (quote: string, author: string)=>{
 export const clickShare = (quote: string)=>{
    window.open(`https://twitter.com/intent/tweet?text=${quote}`);
 }
-

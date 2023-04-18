@@ -29,6 +29,7 @@ export type networkType ={
   country: countryType
 }
 export type showType ={
+  id: string,
   url: string,
   name: string,
   types: string, 
@@ -48,6 +49,7 @@ export type showType ={
 export type filmsType = {
   show: showType,
   score: Number | string,
+  films: any
 }
 export type peopleType = {
   url: string,

@@ -1,12 +1,25 @@
 import { createSlice, createAsyncThunk, PayloadAction} from "@reduxjs/toolkit";
 
+
 interface filmState {
 isLoading: boolean;
 data: any[] | null;
 isError: boolean;
+showDefaultObjects: boolean;
 }
 
-export const fetchFilms = createAsyncThunk("fetchFilms", async () => {
+type Film = {
+  show: {
+    id: number;
+    name: string;
+    image: {
+      medium: string;
+      original: string;
+    };
+    summary: string;
+  };
+};
+export const fetchFilms= createAsyncThunk <Film[], void>("fetchFilms", async () => {
   const responce = await fetch("https://api.tvmaze.com/search/shows?q=girls");
   return responce.json();
 });
@@ -17,8 +30,10 @@ const filmsSlice = createSlice ({
     isLoading: false,
     data: null,
     isError: false,
+    showDefaultObjects: true,
   } as filmState,
-  reducers: {},
+  reducers: {
+  },
   extraReducers: (builder)=>{
     builder.addCase(fetchFilms.pending, (state)=>{
       state.isLoading = true;
@@ -33,5 +48,4 @@ const filmsSlice = createSlice ({
     });
   },
 })
-
 export default filmsSlice.reducer;

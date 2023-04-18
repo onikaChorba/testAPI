@@ -1,28 +1,24 @@
-import { fetchFilms } from '@component/store/filmsSlice';
 import styles from './FilmsBlock.module.scss';
+import { fetchFilms } from '@component/store/filmsSlice';
 import { filmsType } from "@component/tipes";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 
 export const FilmsBlock= ()=>{
+  const films = useSelector((state:filmsType) => state.films);
   const dispatch = useDispatch();
-  const films = useSelector((state:any) => state.films);
+
   useEffect(() => {
-    dispatch(fetchFilms());
+    dispatch(fetchFilms() as any);
   }, [dispatch]);
 
   if (films.isLoading) {
     return <h1>Loading....</h1>;
   }
 
-
-  // const [showInfo, setShowInfo] = useState(false);
-  //   const handleChange = () => {
-  //   setShowInfo((current) => !current);
-  // };
   return (
-    <div>
+    <div style={{display: 'flex', flexWrap: 'wrap'}}>   
     {
       films.data?.map((film:filmsType, index:number)=>(
         <div style={ {display: 'flex'}} key={index}>
@@ -31,9 +27,9 @@ export const FilmsBlock= ()=>{
         <div className={styles.filmBlock__shotInfo}>
           <div><div className={styles.filmInfo__name}>{film.show.name}</div>
           <p> Premired: {film.show.premiered}</p></div>
-          <button className={styles.showButton} >{ "less... more..."}</button>
+          <button className={styles.showButton}> Show more</button>
         </div></div>
-       {
+       {/* {
    (<div className={styles.filmBlock__info}>
           <div className={styles.filmInfo__name}>{film.show.name}</div>
           <p>Status : {film.show.status}</p>
@@ -49,7 +45,7 @@ export const FilmsBlock= ()=>{
             <button className={styles.filmInfo__button}><a href={film.show.url} target="_blank"> Open site</a></button>
           </div>
         </div>)
-       }
+       } */}
     </div>
       ))
     }

@@ -28,7 +28,7 @@ export default function QuotesBlock() {
     console.log("Цитату скопійовано!");
   }
   const handleShare = ()=>{
-    clickShare (quote, author);
+    clickShare (quote);
   }
   
   return (

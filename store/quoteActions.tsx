@@ -1,4 +1,3 @@
-
 import { setQuote } from './quotesSlice';
 
 export const getNewQuote = (): any=> async (dispatch:any) => {
@@ -19,7 +18,7 @@ export const copyToClipboard = (quote: string, author: string)=>{
   navigator.clipboard.writeText(`${quote} - ${author}`)
 }
 
-export const clickShare = (quote: string, author: string)=>{
+export const clickShare = (quote: string)=>{
    window.open(`https://twitter.com/intent/tweet?text=${quote}`);
 }
 

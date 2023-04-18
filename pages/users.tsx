@@ -6,7 +6,7 @@ export default function Users() {
   return (
     <div className="wrapper">
       <Head>
-        <title>USERS REVIEW</title>
+        <title>Users Rwview</title>
       </Head>
       <h2> USERS REVIEW </h2>
       <UsersBlock />
